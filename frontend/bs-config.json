@@ -1,0 +1,10 @@
+{
+    "port": 3002,
+    "server": {
+      "baseDir": "./",
+      "middleware": {
+        "0": null
+      }
+    }
+  }
+  

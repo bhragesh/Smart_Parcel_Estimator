@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Parcel Estimator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .live-data {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fffbe6;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h1>📦 Parcel Records</h1>
+  <div style="text-align: center; margin-top: 10px;">
+    <button onclick="location.reload()" style="background-color: rgb(7, 249, 7); padding: 10px 20px; font-size: 16px; cursor: pointer;"">
+      🔄 Refresh List
+    </button>
+  </div>
+  
+
+  <!-- <div class="live-data">
+    <p><strong>Live Length:</strong> <span id="length">--</span> cm</p>
+    <p><strong>Live Width:</strong> <span id="width">--</span> cm</p>
+    <p><strong>Live Height:</strong> <span id="height">--</span> cm</p>
+    <p><strong>Volume:</strong> <span id="volume">--</span> cm³</p>
+    <p><strong>Price:</strong> ₹<span id="price">--</span></p>
+  </div> -->
+
+  <table id="parcelTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Length (cm)</th>
+        <th>Width (cm)</th>
+        <th>Height (cm)</th>
+        <th>Volume (cm³)</th>
+        <th>Weight (g)</th>
+        <th>Price (₹)</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- Rows will be added by JS -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
